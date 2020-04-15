@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.15)
-project(ALCHEMYgraph)
+project(cubes)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(OpenGlLinkers -lGL -lGLU -lglfw3 -lX11 -lXxf86vm -lXrandr -lpthread -lXi -ldl -lXinerama -lXcursor)
+find_package(OpenGL REQUIRED)
 
 include_directories(
         ./cubes-libs
@@ -12,6 +12,8 @@ include_directories(
         ./cubes-classes
 )
 
+include_directories(${OPENGL_INCLUDE_DIRS})
+
 add_executable(cubes main.cpp)
 
-target_link_libraries(cubes ${OpenGlLinkers} ${CMAKE_SOURCE_DIR}/cubes-libs/SOIL.lib)
+target_link_libraries(cubes ${OPENGL_LIBRARIES} glfw ${CMAKE_SOURCE_DIR}/cubes-libs/SOIL.lib)
