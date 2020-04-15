@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/cubes.dir/main.cpp.o  -o cubes -lGL -lGLU -lglfw3 -lX11 -lXxf86vm -lXrandr -lpthread -lXi -ldl -lXinerama -lXcursor ../cubes-libs/SOIL.lib 
